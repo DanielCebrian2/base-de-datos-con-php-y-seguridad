@@ -1,5 +1,5 @@
-#INSERTAR NOMBRE Y NUMERO EN BASE DE DATOS
-
+## INSERTAR NOMBRE Y NUMERO EN BASE DE DATOS
+```
 <!DOCTYPE html>
 <html>
 
@@ -27,9 +27,9 @@
 </body>
 
 </html>
-
-#SELECCIONAR NUMERO DE LA BASE DE DATOS Y OPERAR CON OTRO
-
+```
+## SELECCIONAR NUMERO DE LA BASE DE DATOS Y OPERAR CON OTRO
+```
 <!DOCTYPE html>
 <html>
 
@@ -57,3 +57,4 @@
 </body>
 
 </html>
+```
