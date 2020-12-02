@@ -1,0 +1,59 @@
+#INSERTAR NOMBRE Y NUMERO EN BASE DE DATOS
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<title>P001</title>
+</head>
+
+<body>
+	<?php
+	    $numero = "10";
+		$nombre = htmlspecialchars($_GET['nombre']); 
+		
+		$var = "datos.ini";
+		$base = parse_ini_file($var);		
+		$php = new PDO($base["baseDeDatos"],$base["usuario"],$base["password"]);
+		$con = $php->prepare("INSERT INTO encabezados VALUES (DEFAULT,:tex,:num);");
+		$con->bindParam(':tex',$nombre);
+        $con->bindParam(':num',$numero);
+		$con->execute();
+
+		//$resultado = $registros[0][1];
+	?>
+	<h1><?php echo "buen trabajo a insertado a: " . $nombre . " con el numero: " . $numero?></h1>
+</body>
+
+</html>
+
+#SELECCIONAR NUMERO DE LA BASE DE DATOS Y OPERAR CON OTRO
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<title>P001</title>
+</head>
+
+<body>
+   
+	<?php
+            $var = "datos.ini";
+            $base = parse_ini_file($var);		
+            $php = new PDO($base["baseDeDatos"],$base["usuario"],$base["password"]);
+             $con = $php->prepare("SELECT * from encabezados;");
+			$con->execute();
+			$registros = $con->fetchAll(PDO::FETCH_NUM);	
+			$resultado1 = $registros[3][2];	
+            $resultado2 = $registros[4][2];
+            $operacion = $resultado1 - $resultado2;
+			?><h1><?php echo "$resultado1" . " " . "$resultado2"   ?></h1><?php
+            ?><h1><?php echo "$operacion"   ?></h1><?php
+    
+    ?>
+</body>
+
+</html>
