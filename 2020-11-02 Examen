@@ -1,5 +1,6 @@
+#EXAMEN
 ## INSERTAR NOMBRE Y NUMERO EN BASE DE DATOS
-```
+```PHP
 <!DOCTYPE html>
 <html>
 
@@ -29,7 +30,7 @@
 </html>
 ```
 ## SELECCIONAR NUMERO DE LA BASE DE DATOS Y OPERAR CON OTRO
-```
+```PHP
 <!DOCTYPE html>
 <html>
 
